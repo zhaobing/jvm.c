@@ -2,6 +2,8 @@
 #include "common.h"
 #include "cmd.h"
 
+int startJVM(Cmd *cmd);
+
 void debug()
 {
     sprint("debug....");
@@ -16,7 +18,15 @@ int main(int argc, char *args[])
     {
         return -1;
     }
-    cmd->print(cmd);
+    else
+    {
+        startJVM(cmd);
+    }
     debug();
     return 0;
+}
+
+int startJVM(Cmd *cmd)
+{
+    cmd->print(cmd);
 }
